@@ -3,6 +3,7 @@ from clear_screen import clear_screen
 from loading_screen import progress_bar
 from title_screen import print_title
 from dash_line import print_dash_line
+from Training_History_Title import print_training_history_title 
 from pathlib import Path
 import csv
 
@@ -26,8 +27,8 @@ def get_user_weight():
     while True:
         try:
             weight = float(input("\nPlease enter your weight in pounds (lbs): ").strip())
-            if weight <= 0 or weight > 1000:
-                print("Invalid input. Please enter a weight between 1 and 1000 lbs.")
+            if weight <= 50 or weight > 700:
+                print("Invalid input. Please enter a valid weight between 50 and 700 lbs.")
             else:
                 return weight
         except ValueError:
@@ -109,22 +110,35 @@ def validate_training_sub_option_selection(training_option_sub_option_selected, 
 def get_training_duration():
     try:
         duration = float(input("\nEnter the duration of your training session in minutes: ").strip())
+        if duration <= 0 or duration > 300:
+            raise ValueError("Duration must be between 0 and 300 minutes.")
         return duration
-    except ValueError:
-        print("Invalid input. Please enter a valid number.")
+    except ValueError as e:
+        print(f"Invalid input. Please enter a valid number. ({e})")
         return get_training_duration()
 
-# Write user data to CSV file
+# Write user data to CSV file located in the user's Documents directory under Documents -- > "Recovery_Suite_Data"
 def write_user_data_to_csv(user, username, current_time):
-    documents_dir = Path.home() / "Documents"/"Recovery_Suite_Data"
-    file_path = documents_dir / f"{username}_Training_Data.csv"
+    documents_dir = Path.home() / "Documents"/"Recovery_Suite_Data" # Directory to store the user's training data CSV file
+    file_path = documents_dir / f"{username}_Training_Data.csv" # CSV file to store the user's training data
     documents_dir.mkdir(parents=True, exist_ok=True)  # Ensure the Documents directory exists
     with open(file_path, mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Weight", "Training Option Selected", "Training Sub-Option Selected", "Training Duration", "Time Recorded"])
         writer.writerow([user.weight, user.training_option_selected, user.training_sub_option_selected, user.training_duration, current_time])
 
+# Function to display the user's training data from the CSV file 
+def display_user_training_data(username):
+    documents_dir = Path.home() / "Documents"/"Recovery_Suite_Data" # Directory to store the user's training data CSV file
+    file_path = documents_dir / f"{username}_Training_Data.csv" # CSV file to store the user's training data
+    if not file_path.exists():
+        print(f"No training data found for user {username}.")
+        return
+    with open(file_path, mode='r') as file:
+        reader = csv.reader(file)
+        return list(reader)
 
+#to do add password protection for user data access.
 
 
 #Main 
@@ -134,6 +148,8 @@ if __name__ == "__main__":
     print_title()
     progress_bar(1)
     clear_screen()
+# End of Screen 1 - Title Screen and Loading Screen
+
 
 #Screen 2 - Title Screen and Time 
     print_title()
@@ -144,8 +160,27 @@ if __name__ == "__main__":
     clear_screen()
     print_title()
     print(f"Current date and time: {current_time}\n")
+# End of Screen 2 - Title Screen and Time
 
-#Screen 3 - Gather User Weight, Training Option, Sub-Option, and Duration
+
+# Screen 3 - Display Existing Training Data if user would like to view it
+    if input("\nWould you like to view your existing training data? (Y/N): ").strip().lower() != 'y':
+        print("\nSkipping view of existing training data.\n")
+
+    else:
+        username = str(input("\nPlease enter your username to view your training data: ").strip())
+        existing_data = display_user_training_data(username)
+
+        if existing_data:
+            print_training_history_title()
+            print(f"\nExisting training data for user {username}:\n")
+            for row in existing_data:
+                print(row)
+        continue_prompt = input("\nPress [ENTER] to continue...")
+        clear_screen()
+ # End of Screen 3 - Display Existing Training Data
+
+#Screen 4 - Gather User Weight, Training Option, Sub-Option, and Duration
     while True:
         weight = get_user_weight()    
         print(f"\nYour weight is: {weight} lbs\n")

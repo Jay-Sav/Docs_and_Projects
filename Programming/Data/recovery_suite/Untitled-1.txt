@@ -1,0 +1,481 @@
+(Cam1) [MDC] *#show user-table mac  c2:5e:2c:58:bb:79
+
+Users
+-----
+    IP              MAC            Name           Role           Age(d:h:m)  Auth    VPN link  AP name                             Roaming   Essid/Bssid/Phy                      Profile              Forward mode  Type  Host Name  User Type
+----------     ------------       ------          ----           ----------  ----    --------  -------                             -------   ---------------                      -------              ------------  ----  ---------  ---------
+10.136.33.173  c2:5e:2c:58:bb:79  jmr24y@fsu.edu  authenticated  00:00:02    802.1x            hcb-555r101sw-ap5.wireless.fsu.edu  Wireless  FSUSecure/d0:4d:c6:dd:65:a2/5GHz-HT  CPPM_8021X_aaa_prof  tunnel                         WIRELESS
+(Cam1) [MDC] *#show user-table ip 10.136.33.173 lo
+log                     Show User Debug Log
+
+(Cam1) [MDC] *#show user-table ip 10.136.33.173 log 
+
+   1: Wed Sep  2 18:35:27.456099  assg-vlan-req *                     id 2106 len 242, bssid 9c:da:b7:83:67:c0
+
+   2: Wed Sep  2 18:35:27.456099  Vlan assigned *                     242 Reason: Dot1x Aruba VSA 
+
+   3: Wed Sep  2 18:35:27.456099  mac-user-gsm-priv-section-update    id 0 len 0, bssid 9c:da:b7:83:67:c0
+
+   4: Wed Sep  2 18:35:27.456099  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+   5: Wed Sep  2 18:35:27.456099  mac-user-gsm-iplist-section-update  id 0 len 0, bssid 9c:da:b7:83:67:c0
+
+   6: Wed Sep  2 18:35:27.456099  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+   7: Wed Sep  2 18:35:27.456099  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+   8: Wed Sep  2 18:35:27.456099  assg-vlan-resp *                    id 0 len 242, bssid 9c:da:b7:83:67:c0
+
+   9: Wed Sep  2 18:41:12.376063  station-down *                      id 0 len 0, bssid 9c:da:b7:83:67:c0
+
+  10: Wed Sep  2 18:41:12.376063  mac-user-gsm-priv-section-update    id 0 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  11: Wed Sep  2 18:41:12.376063  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+  12: Wed Sep  2 18:41:12.376063  Role assigned *                     authenticated Reason: ROLE_DERIVATION_DOT1X 
+
+  13: Wed Sep  2 18:41:12.376063  gsm-ip-user-publish                 10.136.34.213 Repkey 12 success
+
+  14: Wed Sep  2 18:41:12.376063  station-up *                        id 0 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  15: Wed Sep  2 18:41:12.376063  mac-user-gsm-iplist-section-update  id 0 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  16: Wed Sep  2 18:41:12.376063  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+  17: Wed Sep  2 18:41:13.272908  ipuser repkey change *              10.136.34.213 Repkey 4294967295 success
+
+  18: Wed Sep  2 18:41:13.272908  macuser repkey change *             id 65535 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  19: Wed Sep  2 18:41:13.272908  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+  20: Wed Sep  2 18:41:13.272908  user repkey change                  UUID: 001a1e04a8e800000fb4d8af Rkey: 4294967295 success
+
+  21: Wed Sep  2 18:41:13.272908  station-down *                      id 0 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  22: Wed Sep  2 18:46:15.040123  user-delete-idle-timeout            id 0 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  23: Wed Sep  2 18:46:15.040123  ip-user-gsm-delete                  10.136.34.213 success
+
+  24: Wed Sep  2 18:46:15.040123  user-gsm-publish   *                UUID: 001a1e04a8e800000fb4d8af Rkey: 4294967295 success
+
+  25: Wed Sep  2 18:46:15.040123  macuser repkey change *             id 65535 len 0, bssid 48:4a:e9:d7:8d:f0
+
+  26: Wed Sep  2 18:46:15.040123  mac-user-gsm-delete                 id 0 len 0, bssid 00:00:00:00:00:00
+
+  27: Fri Sep  4 08:01:45.768104  Role assigned *                     logon Reason: ROLE_DERIVATION_NONE 
+
+  28: Fri Sep  4 08:01:45.768104  Role assigned *                     logon Reason: ROLE_DERIVATION_NONE 
+
+  29: Fri Sep  4 08:01:45.768104  station-up *                        id 0 len 0, bssid d0:4d:c6:dd:b2:b2
+
+  30: Fri Sep  4 08:01:45.776096  user-gsm-publish   *                UUID: 001a1e04a8e800000fb85358 Rkey: 4294967295 success
+
+  31: Fri Sep  4 08:01:45.776096  macuser repkey change *             id 65535 len 0, bssid d0:4d:c6:dd:b2:b2
+
+  32: Fri Sep  4 08:01:46.016062  user-gsm-publish   *                UUID: 001a1e04a8e800000fb85358 Rkey: 4294967295 success
+
+  33: Fri Sep  4 08:01:46.016062  macuser repkey change *             id 65535 len 0, bssid d0:4d:c6:dd:b2:b2
+
+  34: Fri Sep  4 08:01:46.016062  Role assigned *                     authenticated Reason: ROLE_DERIVATION_DOT1X 
+
+  35: Fri Sep  4 08:01:46.016062  macuser repkey change *             id 65535 len 0, bssid d0:4d:c6:dd:b2:b2
+
+  36: Fri Sep  4 08:01:46.016062  assg-vlan-req *                     id 2106 len 242, bssid d0:4d:c6:dd:b2:b2
+
+  37: Fri Sep  4 08:01:46.016062  Vlan assigned *                     242 Reason: Dot1x Aruba VSA 
+
+  38: Fri Sep  4 08:01:46.016062  assg-vlan-resp *                    id 0 len 242, bssid d0:4d:c6:dd:b2:b2
+
+  39: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 15 len 1120, bssid d0:4d:c6:dd:b2:b2
+
+  40: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 4 len 1030, bssid d0:4d:c6:dd:b2:b2
+
+  41: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 4 len 6, bssid d0:4d:c6:dd:b2:b2
+
+  42: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 205 len 258, bssid d0:4d:c6:dd:b2:b2
+
+  43: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 205 len 1120, bssid d0:4d:c6:dd:b2:b2
+
+  44: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 5 len 1030, bssid d0:4d:c6:dd:b2:b2
+
+  45: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 5 len 6, bssid d0:4d:c6:dd:b2:b2
+
+  46: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 171 len 258, bssid d0:4d:c6:dd:b2:b2
+
+  47: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 171 len 1120, bssid d0:4d:c6:dd:b2:b2
+
+  48: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 6 len 1030, bssid d0:4d:c6:dd:b2:b2
+
+  49: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 6 len 6, bssid d0:4d:c6:dd:b2:b2
+
+  50: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 82 len 258, bssid d0:4d:c6:dd:b2:b2
+
+  51: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 82 len 1120, bssid d0:4d:c6:dd:b2:b2
+
+  52: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 7 len 1030, bssid d0:4d:c6:dd:b2:b2
+
+  53: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 7 len 6, bssid d0:4d:c6:dd:b2:b2
+
+  54: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 58 len 258, bssid d0:4d:c6:dd:b2:b2
+
+  55: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 58 len 595, bssid d0:4d:c6:dd:b2:b2
+
+  56: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 8 len 509, bssid d0:4d:c6:dd:b2:b2
+
+  57: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 8 len 136, bssid d0:4d:c6:dd:b2:b2
+
+  58: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 181 len 388, bssid d0:4d:c6:dd:b2:b2
+
+  59: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 181 len 143, bssid d0:4d:c6:dd:b2:b2
+
+  60: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 9 len 61, bssid d0:4d:c6:dd:b2:b2
+
+  61: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 9 len 6, bssid d0:4d:c6:dd:b2:b2
+
+  62: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 240 len 258, bssid d0:4d:c6:dd:b2:b2
+
+  63: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 240 len 122, bssid d0:4d:c6:dd:b2:b2
+
+  64: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 10 len 40, bssid d0:4d:c6:dd:b2:b2
+
+  65: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 10 len 54, bssid d0:4d:c6:dd:b2:b2
+
+  66: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 175 len 306, bssid d0:4d:c6:dd:b2:b2
+
+  67: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 175 len 157, bssid d0:4d:c6:dd:b2:b2
+
+  68: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 11 len 75, bssid d0:4d:c6:dd:b2:b2
+
+  69: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 11 len 108, bssid d0:4d:c6:dd:b2:b2
+
+  70: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 105 len 360, bssid d0:4d:c6:dd:b2:b2
+
+  71: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 105 len 168, bssid d0:4d:c6:dd:b2:b2
+
+  72: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 12 len 86, bssid d0:4d:c6:dd:b2:b2
+
+  73: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 12 len 41, bssid d0:4d:c6:dd:b2:b2
+
+  74: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 225 len 293, bssid d0:4d:c6:dd:b2:b2
+
+  75: Fri Sep  4 08:01:46.032063  rad-resp   <-                       id 225 len 128, bssid d0:4d:c6:dd:b2:b2
+
+  76: Fri Sep  4 08:01:46.032063  eap-req   <-                        id 13 len 46, bssid d0:4d:c6:dd:b2:b2
+
+  77: Fri Sep  4 08:01:46.032063  eap-resp   ->                       id 13 len 46, bssid d0:4d:c6:dd:b2:b2
+
+  78: Fri Sep  4 08:01:46.032063  rad-req   ->                        id 101 len 298, bssid d0:4d:c6:dd:b2:b2
+
+  79: Fri Sep  4 08:01:46.032063  rad-accept   <-                     id 101 len 252, bssid d0:4d:c6:dd:b2:b2
+
+  80: Fri Sep  4 08:01:46.032063  eap-success   <-                    id 13 len 4, bssid d0:4d:c6:dd:b2:b2
+
+  81: Fri Sep  4 08:01:46.032063  wpa2-key1   <-                      id 0 len 117, bssid d0:4d:c6:dd:b2:b2
+
+  82: Fri Sep  4 08:01:46.032063  wpa2-key2   ->                      id 0 len 248, bssid d0:4d:c6:dd:b2:b2
+
+  83: Fri Sep  4 08:01:46.032063  wpa2-key3   <-                      id 0 len 287, bssid d0:4d:c6:dd:b2:b2
+
+  84: Fri Sep  4 08:01:46.032063  wpa2-key4   ->                      id 0 len 95, bssid d0:4d:c6:dd:b2:b2
+
+  85: Fri Sep  4 08:02:42.560084  station-down *                      id 0 len 0, bssid d0:4d:c6:dd:b2:b2
+
+  86: Fri Sep  4 08:02:42.560084  mac-user-gsm-delete                 id 0 len 0, bssid 00:00:00:00:00:00
+
+  87: Fri Sep  4 08:02:54.448060  Role assigned *                     logon Reason: ROLE_DERIVATION_NONE 
+
+  88: Fri Sep  4 08:02:54.448060  Role assigned *                     logon Reason: ROLE_DERIVATION_NONE 
+
+  89: Fri Sep  4 08:02:54.448060  station-up *                        id 0 len 0, bssid d0:4d:c6:dd:7b:c2
+
+  90: Fri Sep  4 08:02:54.448060  user-gsm-publish   *                UUID: 001a1e04a8e800000fb853fb Rkey: 4294967295 success
+
+  91: Fri Sep  4 08:02:54.448060  macuser repkey change *             id 65535 len 0, bssid d0:4d:c6:dd:7b:c2
+
+  92: Fri Sep  4 08:02:54.744098  user-gsm-publish   *                UUID: 001a1e04a8e800000fb853fb Rkey: 4294967295 success
+
+  93: Fri Sep  4 08:02:54.744098  macuser repkey change *             id 65535 len 0, bssid d0:4d:c6:dd:7b:c2
+
+  94: Fri Sep  4 08:02:54.744098  Role assigned *                     authenticated Reason: ROLE_DERIVATION_DOT1X 
+
+  95: Fri Sep  4 08:02:54.744098  macuser repkey change *             id 65535 len 0, bssid d0:4d:c6:dd:7b:c2
+
+  96: Fri Sep  4 08:02:54.744098  assg-vlan-req *                     id 2106 len 242, bssid d0:4d:c6:dd:7b:c2
+
+  97: Fri Sep  4 08:02:54.744098  Vlan assigned *                     242 Reason: Dot1x Aruba VSA 
+
+  98: Fri Sep  4 08:02:54.744098  assg-vlan-resp *                    id 0 len 242, bssid d0:4d:c6:dd:7b:c2
+
+  99: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 13 len 1120, bssid d0:4d:c6:dd:7b:c2
+
+ 100: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 4 len 1030, bssid d0:4d:c6:dd:7b:c2
+
+
+ 101: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 4 len 6, bssid d0:4d:c6:dd:7b:c2
+
+ 102: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 45 len 258, bssid d0:4d:c6:dd:7b:c2
+
+ 103: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 45 len 1120, bssid d0:4d:c6:dd:7b:c2
+
+ 104: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 5 len 1030, bssid d0:4d:c6:dd:7b:c2
+
+ 105: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 5 len 6, bssid d0:4d:c6:dd:7b:c2
+
+ 106: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 208 len 258, bssid d0:4d:c6:dd:7b:c2
+
+ 107: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 208 len 1120, bssid d0:4d:c6:dd:7b:c2
+
+ 108: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 6 len 1030, bssid d0:4d:c6:dd:7b:c2
+
+ 109: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 6 len 6, bssid d0:4d:c6:dd:7b:c2
+
+ 110: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 110 len 258, bssid d0:4d:c6:dd:7b:c2
+
+ 111: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 110 len 1120, bssid d0:4d:c6:dd:7b:c2
+
+ 112: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 7 len 1030, bssid d0:4d:c6:dd:7b:c2
+
+ 113: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 7 len 6, bssid d0:4d:c6:dd:7b:c2
+
+ 114: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 212 len 258, bssid d0:4d:c6:dd:7b:c2
+
+ 115: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 212 len 595, bssid d0:4d:c6:dd:7b:c2
+
+ 116: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 8 len 509, bssid d0:4d:c6:dd:7b:c2
+
+ 117: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 8 len 136, bssid d0:4d:c6:dd:7b:c2
+
+ 118: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 47 len 388, bssid d0:4d:c6:dd:7b:c2
+
+ 119: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 47 len 143, bssid d0:4d:c6:dd:7b:c2
+
+ 120: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 9 len 61, bssid d0:4d:c6:dd:7b:c2
+
+ 121: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 9 len 6, bssid d0:4d:c6:dd:7b:c2
+
+ 122: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 246 len 258, bssid d0:4d:c6:dd:7b:c2
+
+ 123: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 246 len 122, bssid d0:4d:c6:dd:7b:c2
+
+ 124: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 10 len 40, bssid d0:4d:c6:dd:7b:c2
+
+ 125: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 10 len 54, bssid d0:4d:c6:dd:7b:c2
+
+ 126: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 121 len 306, bssid d0:4d:c6:dd:7b:c2
+
+ 127: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 121 len 157, bssid d0:4d:c6:dd:7b:c2
+
+ 128: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 11 len 75, bssid d0:4d:c6:dd:7b:c2
+
+ 129: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 11 len 108, bssid d0:4d:c6:dd:7b:c2
+
+ 130: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 254 len 360, bssid d0:4d:c6:dd:7b:c2
+
+ 131: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 254 len 168, bssid d0:4d:c6:dd:7b:c2
+
+ 132: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 12 len 86, bssid d0:4d:c6:dd:7b:c2
+
+ 133: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 12 len 41, bssid d0:4d:c6:dd:7b:c2
+
+ 134: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 138 len 293, bssid d0:4d:c6:dd:7b:c2
+
+ 135: Fri Sep  4 08:02:54.760063  rad-resp   <-                       id 138 len 128, bssid d0:4d:c6:dd:7b:c2
+
+ 136: Fri Sep  4 08:02:54.760063  eap-req   <-                        id 13 len 46, bssid d0:4d:c6:dd:7b:c2
+
+ 137: Fri Sep  4 08:02:54.760063  eap-resp   ->                       id 13 len 46, bssid d0:4d:c6:dd:7b:c2
+
+ 138: Fri Sep  4 08:02:54.760063  rad-req   ->                        id 82 len 298, bssid d0:4d:c6:dd:7b:c2
+
+ 139: Fri Sep  4 08:02:54.760063  rad-accept   <-                     id 82 len 252, bssid d0:4d:c6:dd:7b:c2
+
+ 140: Fri Sep  4 08:02:54.760063  eap-success   <-                    id 13 len 4, bssid d0:4d:c6:dd:7b:c2
+
+ 141: Fri Sep  4 08:02:54.760063  wpa2-key1   <-                      id 0 len 117, bssid d0:4d:c6:dd:7b:c2
+
+ 142: Fri Sep  4 08:02:54.760063  wpa2-key2   ->                      id 0 len 248, bssid d0:4d:c6:dd:7b:c2
+
+ 143: Fri Sep  4 08:02:54.760063  wpa2-key3   <-                      id 0 len 287, bssid d0:4d:c6:dd:7b:c2
+
+ 144: Fri Sep  4 08:02:54.760063  wpa2-key4   ->                      id 0 len 95, bssid d0:4d:c6:dd:7b:c2
+
+ 145: Fri Sep  4 08:02:57.536079  User IP Add *                       10.136.33.173 Reason: Sibtye 
+
+ 146: Fri Sep  4 08:02:57.536079  user-gsm-publish   *                UUID: 001a1e04a8e800000fb853fb Rkey: 12 success
+
+ 147: Fri Sep  4 08:02:57.536079  macuser repkey change *             id 12 len 0, bssid d0:4d:c6:dd:7b:c2
+
+ 148: Fri Sep  4 08:02:57.536079  gsm-ip-user-publish                 10.136.33.173 Repkey 12 success
+
+ 149: Fri Sep  4 08:02:57.536079  ip-user-gsm-notify                  id 0 len 0, bssid 00:00:00:00:00:00
+
+ 150: Fri Sep  4 08:02:57.536079  mac-user-gsm-priv-section-update    id 0 len 0, bssid d0:4d:c6:dd:7b:c2
+
+ 151: Fri Sep  4 08:02:57.536079  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+ 152: Fri Sep  4 08:02:57.536079  ip-user-gsm-priv-section-update     id 0 len 0, bssid d0:4d:c6:dd:7b:c2
+
+ 153: Fri Sep  4 08:03:15.096062  station-down *                      id 0 len 0, bssid d0:4d:c6:dd:7b:c2
+
+ 154: Fri Sep  4 08:03:15.096062  mac-user-gsm-priv-section-update    id 0 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 155: Fri Sep  4 08:03:15.096062  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+ 156: Fri Sep  4 08:03:15.096062  Role assigned *                     authenticated Reason: ROLE_DERIVATION_DOT1X 
+
+ 157: Fri Sep  4 08:03:15.096062  gsm-ip-user-publish                 10.136.33.173 Repkey 12 success
+
+ 158: Fri Sep  4 08:03:15.096062  user-gsm-publish   *                UUID: 001a1e04a8e800000fb853fb Rkey: 12 success
+
+ 159: Fri Sep  4 08:03:15.096062  macuser repkey change *             id 12 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 160: Fri Sep  4 08:03:15.096062  mac-user-gsm-priv-section-update    id 0 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 161: Fri Sep  4 08:03:15.096062  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+ 162: Fri Sep  4 08:03:15.096062  station-up *                        id 0 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 163: Fri Sep  4 08:03:15.096062  macuser repkey change *             id 12 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 164: Fri Sep  4 08:03:15.096062  assg-vlan-req *                     id 2106 len 242, bssid d0:4d:c6:dd:65:a2
+
+ 165: Fri Sep  4 08:03:15.096062  Vlan assigned *                     242 Reason: Dot1x Aruba VSA 
+
+ 166: Fri Sep  4 08:03:15.096062  mac-user-gsm-priv-section-update    id 0 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 167: Fri Sep  4 08:03:15.096062  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+ 168: Fri Sep  4 08:03:15.096062  mac-user-gsm-iplist-section-update  id 0 len 0, bssid d0:4d:c6:dd:65:a2
+
+ 169: Fri Sep  4 08:03:15.096062  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+ 170: Fri Sep  4 08:03:15.096062  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+ 171: Fri Sep  4 08:03:15.096062  assg-vlan-resp *                    id 0 len 242, bssid d0:4d:c6:dd:65:a2
+
+ 172: Fri Sep  4 08:03:15.104068  cluster-user-gsm-stby-info-update   128.186.255.216 
+
+(Cam1) [MDC] *#
+
+
+
+
+
+(Cam1) [MDC] *#show ap client trail-info c2:5e:2c:58:bb:79
+
+Client Trail Info
+-----------------
+MAC                BSSID              ESSID      AP-name                             VLAN  Deauth Reason       Alert
+---                -----              -----      -------                             ----  -------------       -----
+c2:5e:2c:58:bb:79  d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  242   Auth STA up failed  STA has roamed to another AP
+
+Deauth Reason
+-------------
+Reason                                    Timestamp
+------                                    ---------
+Auth STA up failed                        Sep  4 08:02:42
+STA has left and is disassociated         Sep  2 18:41:13
+Wlan driver wireless client out of range  Sep  2 17:35:02
+Sapcp Ageout (internal ageout)            Aug 31 16:30:29
+Sapcp Ageout (internal ageout)            Aug 31 14:32:19
+STA has left and is disassociated         Aug 31 13:40:09
+STA has left and is disassociated         Aug 31 13:37:25
+APAE Disconnect                           Aug 31 09:16:19
+Sapcp Ageout (internal ageout)            Aug 28 15:37:08
+STA has left and is disassociated         Aug 28 15:22:25
+Num Deauths:10
+
+Alerts
+------
+Reason                        Timestamp
+------                        ---------
+STA has roamed to another AP  Sep  4 08:03:15
+STA has roamed to another AP  Sep  4 08:02:42
+STA has roamed to another AP  Sep  2 18:41:12
+STA has roamed to another AP  Sep  2 18:35:27
+STA has roamed to another AP  Sep  2 18:35:18
+STA has roamed to another AP  Sep  2 18:34:40
+STA has roamed to another AP  Sep  2 18:34:35
+STA has roamed to another AP  Sep  2 18:33:41
+STA has roamed to another AP  Sep  2 18:32:59
+STA has roamed to another AP  Sep  2 18:32:51
+Num Alerts:10
+
+Mobility Trail
+--------------
+BSSID              ESSID      AP-name                             VLAN  Timestamp
+-----              -----      -------                             ----  ---------
+d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  242   Sep  4 08:03:15
+d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  2106  Sep  4 08:03:15
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  242   Sep  4 08:03:15
+d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  2106  Sep  4 08:03:15
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  242   Sep  4 08:02:55
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  2106  Sep  4 08:02:54
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  2106  Sep  4 08:02:54
+d0:4d:c6:dd:b2:a0  FSUSecure  hcb-555r101nw-ap1.wireless.fsu.edu  2106  Sep  4 08:02:42
+d0:4d:c6:dd:b2:a0  FSUSecure  hcb-555r101nw-ap1.wireless.fsu.edu  2106  Sep  4 08:02:42
+d0:4d:c6:dd:b2:a0  FSUSecure  hcb-555r101nw-ap1.wireless.fsu.edu  2106  Sep  4 08:02:42
+
+
+
+
+
+(Cam1) [MDC] *#show ap client trail-info c2:5e:2c:58:bb:79
+
+Client Trail Info
+-----------------
+MAC                BSSID              ESSID      AP-name                             VLAN  Deauth Reason       Alert
+---                -----              -----      -------                             ----  -------------       -----
+c2:5e:2c:58:bb:79  d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  242   Auth STA up failed  STA has roamed to another AP
+
+Deauth Reason
+-------------
+Reason                                    Timestamp
+------                                    ---------
+Auth STA up failed                        Sep  4 08:02:42
+STA has left and is disassociated         Sep  2 18:41:13
+Wlan driver wireless client out of range  Sep  2 17:35:02
+Sapcp Ageout (internal ageout)            Aug 31 16:30:29
+Sapcp Ageout (internal ageout)            Aug 31 14:32:19
+STA has left and is disassociated         Aug 31 13:40:09
+STA has left and is disassociated         Aug 31 13:37:25
+APAE Disconnect                           Aug 31 09:16:19
+Sapcp Ageout (internal ageout)            Aug 28 15:37:08
+STA has left and is disassociated         Aug 28 15:22:25
+Num Deauths:10
+
+Alerts
+------
+Reason                        Timestamp
+------                        ---------
+STA has roamed to another AP  Sep  4 08:03:15
+STA has roamed to another AP  Sep  4 08:02:42
+STA has roamed to another AP  Sep  2 18:41:12
+STA has roamed to another AP  Sep  2 18:35:27
+STA has roamed to another AP  Sep  2 18:35:18
+STA has roamed to another AP  Sep  2 18:34:40
+STA has roamed to another AP  Sep  2 18:34:35
+STA has roamed to another AP  Sep  2 18:33:41
+STA has roamed to another AP  Sep  2 18:32:59
+STA has roamed to another AP  Sep  2 18:32:51
+Num Alerts:10
+
+Mobility Trail
+--------------
+BSSID              ESSID      AP-name                             VLAN  Timestamp
+-----              -----      -------                             ----  ---------
+d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  242   Sep  4 08:03:15
+d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  2106  Sep  4 08:03:15
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  242   Sep  4 08:03:15
+d0:4d:c6:dd:65:a2  FSUSecure  hcb-555r101sw-ap5.wireless.fsu.edu  2106  Sep  4 08:03:15
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  242   Sep  4 08:02:55
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  2106  Sep  4 08:02:54
+d0:4d:c6:dd:7b:c2  FSUSecure  hcb-555r101mw-ap3.wireless.fsu.edu  2106  Sep  4 08:02:54
+d0:4d:c6:dd:b2:a0  FSUSecure  hcb-555r101nw-ap1.wireless.fsu.edu  2106  Sep  4 08:02:42
+d0:4d:c6:dd:b2:a0  FSUSecure  hcb-555r101nw-ap1.wireless.fsu.edu  2106  Sep  4 08:02:42
+d0:4d:c6:dd:b2:a0  FSUSecure  hcb-555r101nw-ap1.wireless.fsu.edu  2106  Sep  4 08:02:42
+Num Mobility Trails:10
+
+
+
+
