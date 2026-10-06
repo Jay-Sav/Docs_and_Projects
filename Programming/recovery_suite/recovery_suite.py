@@ -3,12 +3,12 @@ from clear_screen import clear_screen
 from loading_screen import progress_bar
 from title_screen import print_title
 from dash_line import print_dash_line
-from Training_History_Title import print_training_history_title 
+from training_history_title import print_training_history_title 
 from pathlib import Path
 import csv
 
 
-class user_data:
+class UserData:
     def __init__(self, weight, training_option_selected, training_sub_option_selected, training_duration):
         self.weight = weight
         self.training_option_selected = training_option_selected
@@ -122,9 +122,13 @@ def write_user_data_to_csv(user, username, current_time):
     documents_dir = Path.home() / "Documents"/"Recovery_Suite_Data" # Directory to store the user's training data CSV file
     file_path = documents_dir / f"{username}_Training_Data.csv" # CSV file to store the user's training data
     documents_dir.mkdir(parents=True, exist_ok=True)  # Ensure the Documents directory exists
+
+    file_exists = file_path.exists() # Check if the CSV file already exists
+
     with open(file_path, mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow(["Weight", "Training Option Selected", "Training Sub-Option Selected", "Training Duration", "Time Recorded"])
+        if not file_exists:
+            writer.writerow(["Weight", "Training Option Selected", "Training Sub-Option Selected", "Training Duration", "Time Recorded"])
         writer.writerow([user.weight, user.training_option_selected, user.training_sub_option_selected, user.training_duration, current_time])
 
 # Function to display the user's training data from the CSV file 
@@ -138,11 +142,11 @@ def display_user_training_data(username):
         reader = csv.reader(file)
         return list(reader)
 
-#to do add password protection for user data access.
+
 
 
 #Main 
-if __name__ == "__main__":
+def main():
 
 #Screen 1 - Title Screen and Loading Screen
     print_title()
@@ -163,35 +167,69 @@ if __name__ == "__main__":
 # End of Screen 2 - Title Screen and Time
 
 
-# Screen 3 - Display Existing Training Data if user would like to view it
-    if input("\nWould you like to view your existing training data? (Y/N): ").strip().lower() != 'y':
-        print("\nSkipping view of existing training data.\n")
+########## Screen 3 - Display Existing Training Data if user would like to view it ########## #################################################
 
-    else:
-        username = str(input("\nPlease enter your username to view your training data: ").strip())
-        existing_data = display_user_training_data(username)
+    while True:
 
-        if existing_data:
-            print_training_history_title()
-            print(f"\nExisting training data for user {username}:\n")
-            for row in existing_data:
-                print(row)
-        continue_prompt = input("\nPress [ENTER] to continue...")
-        clear_screen()
- # End of Screen 3 - Display Existing Training Data
+        user_choice = input("\nWould you like to view your existing training data? (Y/N): ").strip().lower()
 
-#Screen 4 - Gather User Weight, Training Option, Sub-Option, and Duration
+        if user_choice not in ('y', 'yes','n', 'no'):
+            print("\nInvalid input. Please enter 'Y' to view existing training data or 'N' to skip.\n")
+            continue
+
+        elif user_choice in ('n', 'no'):
+            print("\nSkipping view of existing training data.\n")
+            break
+
+        elif user_choice in ('y', 'yes'):
+            username = str(input("\nPlease enter your username to view your training data: ").strip())
+            existing_data = display_user_training_data(username)
+            if existing_data:
+                        print_training_history_title()
+                        print(f"\nExisting training data for user {username}:\n")
+                        for row in existing_data:
+                            print(row)
+            else:
+                print(f"\nNo existing training data found for user {username}.\n")
+            break
+
+    continue_prompt = input("\nPress [ENTER] to continue...")
+    clear_screen()
+
+ ########## End of Screen 3 - Display Existing Training Data ###########################################################
+
+
+########### Screen 4 - Gather User Weight, Training Option, Sub-Option, and Duration ###########################################################
     while True:
         weight = get_user_weight()    
         print(f"\nYour weight is: {weight} lbs\n")
         print_dash_line()
+
+        #Prints the available training options
         options_data = list_training_options()
-        training_option_selected = int(input("\nHow did you you train today (Enter the corresponding number): ").strip())
-        training_option_selected = validate_training_option_selection(training_option_selected, options_data)
+
+        #Get the user's training option selection and validates it against the list of available options, loop until a valid selection is made.
+        while True:
+            try:
+                training_option_selected = int(input("\nHow did you you train today (Enter the corresponding number): ").strip())
+                training_option_selected = validate_training_option_selection(training_option_selected, options_data)
+                break
+            except ValueError:
+                print("\nINVALID INPUT. Please enter a valid number for your training option.\n")
+
+
         print(f"\nWhat specific type of {options_data[training_option_selected]} did you do today?\n"+"--" * 30)
         display_sub_option = get_training_sub_option(int(training_option_selected))
-        training_sub_option_selected = int(input("\nEnter the corresponding number for your specific training type: ").strip())
-        training_sub_option_selected = validate_training_sub_option_selection(training_sub_option_selected, display_sub_option)
+
+        #Validate the user's sub-option selection and loop until a valid selection is made.
+        while True:
+            try:
+                training_sub_option_selected = int(input("\nEnter the corresponding number for your specific training type: ").strip())
+                training_sub_option_selected = validate_training_sub_option_selection(training_sub_option_selected, display_sub_option)
+                break
+            except ValueError:
+                print("\nINVALID INPUT. Please enter a valid number for your specific training type.\n")
+        
         print(f"\nYou selected: {options_data[training_option_selected]} - {display_sub_option[int(training_sub_option_selected)]}")
         training_option_selected = options_data[training_option_selected]
         training_sub_option_selected = display_sub_option[int(training_sub_option_selected)]
@@ -199,7 +237,7 @@ if __name__ == "__main__":
         training_duration = get_training_duration()
         print(f"\nYour training duration was: {training_duration} minutes\n")
 
-        user  = user_data(weight, training_option_selected, training_sub_option_selected, training_duration)
+        user  = UserData(weight, training_option_selected, training_sub_option_selected, training_duration)
         user.print_user_data()
 
         print_dash_line()
@@ -216,5 +254,16 @@ if __name__ == "__main__":
             print_title()
             
     input("\nSession complete. Press [ENTER] to close this window...")
+
+########### End of Screen 4 - Gather User Weight, Training Option, Sub-Option, and Duration ###########################################################
+
+if __name__ == "__main__":
+    main()
   
+
+
+
+
+
+
 

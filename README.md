@@ -1,1 +1,1 @@
-Repository for IT Projects, Documents, and Certification Guides.
+Repository for IT and Programming Projects, Documents, and Cetification and Technical Guides.
