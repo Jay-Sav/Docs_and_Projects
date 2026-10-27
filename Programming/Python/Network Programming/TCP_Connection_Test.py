@@ -48,3 +48,5 @@ except socket.error:
 finally:
     s.close()
 
+input('Press Enter to close...')
+
