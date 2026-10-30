@@ -16,3 +16,6 @@
 
 ## [1.1.2]
 -**Height and BMI Feature** Added the feature to where user can enter there height and choose to calculate their Body Mass Index (BMI).
+
+## [1.1.3]
+-**Ajusted view  of data** Added option to view data after inputting training data.

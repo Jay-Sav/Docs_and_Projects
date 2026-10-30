@@ -137,8 +137,23 @@ def main():
             progress_bar(1)
             clear_screen()
             print_title()
-            
-    input("\nSession complete. Press [ENTER] to close this window...")
+
+    print(f"\nYour training data has been successfully recorded.\n")
+    view_data = input("\nWould you like to view your recorded training data now? (Y/N): ").strip().lower()
+    if view_data == 'y' or view_data == 'yes':
+        existing_data = display_user_training_data(username)
+        if existing_data:
+            print_training_history_title()
+            print(f"\nRecorded training data for user {username}:\n")
+            for row in existing_data:
+                print(row)
+        else:
+            print(f"\nNo recorded training data found for user {username}.\n")
+    else:
+        print("\nYou can view your recorded training data later by running this program again.\n")
+       
+
+    input("\nYour session is now complete. Press [ENTER] to close this application...")
 
 ########### End of Screen 4 - Gather User Weight, Training Option, Sub-Option, and Duration ###########################################################
 
