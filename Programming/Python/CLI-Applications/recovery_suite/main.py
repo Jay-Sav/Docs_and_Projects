@@ -1,6 +1,3 @@
-
-
-
 #Importing the necessary modules and functions from other files in the project
 from src.ui.title_screen import print_title
 from src.ui.loading_screen import progress_bar
@@ -9,9 +6,10 @@ from src.ui.training_history_title import print_training_history_title
 from src.services.clear_screen import clear_screen
 from src.services.get_time import get_current_time
 from src.models.user_data import UserData
+from src.services.health_metrics import calculate_bmi
 from src.services.training_service import ( 
     list_training_options, validate_training_option_selection, get_training_sub_option, validate_training_sub_option_selection,
-    get_training_duration, write_user_data_to_csv, display_user_training_data,get_user_weight)
+    get_training_duration, write_user_data_to_csv, display_user_training_data,get_user_weight,get_user_height,confirm_height_and_weight)
 
 
 #Main 
@@ -71,7 +69,19 @@ def main():
 ########### Screen 4 - Gather User Weight, Training Option, Sub-Option, and Duration ###########################################################
     while True:
         weight = get_user_weight()    
-        print(f"\nYour weight is: {weight} lbs\n")
+        height = get_user_height()
+        while not confirm_height_and_weight(height, weight):
+            print("\nLet's try again.\n")
+            weight = get_user_weight()    
+            height = get_user_height()
+        print_dash_line()
+
+        see_bmi = input("\nWould you like to calculate your BMI? (Y/N): ").strip().lower()
+        if see_bmi in ('y', 'yes'):
+            user_bmi = calculate_bmi(weight, height)
+            print(f"\nYour BMI is: {user_bmi:.2f}\n")
+        else:
+            print("\nSkipping BMI calculation.\n")
         print_dash_line()
 
         #Prints the available training options
@@ -106,7 +116,7 @@ def main():
         training_duration = get_training_duration()
         print(f"\nYour training duration was: {training_duration} minutes\n")
 
-        user  = UserData(weight, training_option_selected, training_sub_option_selected, training_duration)
+        user  = UserData(weight,height, training_option_selected, training_sub_option_selected, training_duration)
         user.print_user_data()
 
         print_dash_line()

@@ -1,19 +1,16 @@
-def calculate_bmi():
-    user_input = ""
-    while user_input != "q":
-        try:
-            weight = int(input("Enter weight (in pounds): "))
-            height = int(input("Enter height (in inches): "))
+def calculate_bmi(weight, height):
+    try:
+        weight = float(weight)
+        height = float(height)
+        bmi = (float(weight) / float(height * height)) * 703
+        return bmi
+    except ValueError:
+        print("Could not calculate health info.\n")
+        return None
+    except ZeroDivisionError:
+        print("Invalid height entered. Must be > 0.")
+        return None
 
-            bmi = (float(weight) / float(height * height)) * 703
-            print(f"BMI: {bmi}")
-            print("(CDC: 18.6-24.9 normal)\n")  # Source www.cdc.gov
-        except ValueError:
-            print("Could not calculate health info.\n")
-        except ZeroDivisionError:
-            print("Invalid height entered. Must be > 0.")
-
-        user_input = input('Enter any key ("q" to quit): ')
 
 class FoodItem:
     # Define constructor with parameters to initialize instance attributes (name, fat, carbs, protein)

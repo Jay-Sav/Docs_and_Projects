@@ -12,6 +12,29 @@ def get_user_weight():
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
+
+def get_user_height():
+    while True:
+        try:
+            height = float(input("\nPlease enter your height in inches (in): ").strip())
+            if height <= 36 or height > 96:
+                print("Invalid input. Please enter a valid height between 36 and 96 inches.")
+            else:
+                return height
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+def confirm_height_and_weight(height, weight):
+    print(f"\nYour Weight is: {weight} lbs and your Height is: {height} inches..is that right? (Y/N): ", end="")
+    confirm = input().strip().lower()
+    while confirm not in ('y', 'yes', 'n', 'no'):
+        print("\nInvalid input. Please enter 'Y' to confirm or 'N' to re-enter your data.\n")
+        confirm = input("Is this information correct? (Y/N): ").strip().lower()
+    if confirm in ('y', 'yes'):
+        return True
+    else:
+        return False
+
 ###Prints training_options then returns training options to variable options_data in main function
 def list_training_options():
     training_options= {

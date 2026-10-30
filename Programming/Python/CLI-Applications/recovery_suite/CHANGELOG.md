@@ -13,3 +13,6 @@
 
 ### Fixed
 - **Bug Fix** Fixed unexpected reslut when entering "yes" to confirm user data. (#3)
+
+## [1.1.2]
+-**Height and BMI Feature** Added the feature to where user can enter there height and choose to calculate their Body Mass Index (BMI).
