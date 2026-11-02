@@ -1,0 +1,13 @@
+# IDEs and Editors
+.idea/
+.settings/
+.vscode/
+
+# Compiled binaries
+**/bin/
+**/build/
+*.class
+
+# OS generated files
+.DS_Store
+Thumbs.db
