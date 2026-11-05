@@ -11,3 +11,6 @@
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Practice Files
+practice.py
